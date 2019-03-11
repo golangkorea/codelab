@@ -16,6 +16,10 @@ func init() {
 }
 
 func main() {
+	// Serve static files
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
 	// Register handlers
 	http.HandleFunc("/", handler.RenderIndex)
 	http.HandleFunc("/auth", handler.RenderLogin)
