@@ -27,6 +27,7 @@ func RenderProfile(w http.ResponseWriter, r *http.Request) {
 	session, _ := store.Get(r, "session")
 	if _, ok := session.Values["user"]; !ok {
 		http.Error(w, "page not found", http.StatusNotFound)
+		return
 	}
 	tmpl.ExecuteTemplate(w, "profile.html", map[string]string{
 		"user": session.Values["user"].(string),
