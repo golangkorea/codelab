@@ -1,0 +1,8 @@
+oauth2:
+  google:
+    client_id: "client id"
+    client_secret: "client secret"
+    redirect_url: "http://localhost:1333/auth/callback"
+    scopes:
+      - "https://www.googleapis.com/auth/userinfo.email"
+      - "https://www.googleapis.com/auth/userinfo.profile"
