@@ -1,1 +1,1 @@
-# Golang Korea & AWSKRUG Codelab
+# Golang Korea X AWSKRUG Codelab
