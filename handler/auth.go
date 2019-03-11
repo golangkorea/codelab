@@ -66,6 +66,7 @@ func Authenticate(w http.ResponseWriter, r *http.Request) {
 	}
 	session.Values["user"] = authUser.Email
 	session.Values["username"] = authUser.Name
+	session.Values["picture"] = authUser.Picture
 	session.Save(r, w)
 
 	// Redirect to profile page

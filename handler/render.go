@@ -32,5 +32,6 @@ func RenderProfile(w http.ResponseWriter, r *http.Request) {
 	tmpl.ExecuteTemplate(w, "profile.html", map[string]string{
 		"user": session.Values["user"].(string),
 		"username": session.Values["username"].(string),
+		"picture": session.Values["picture"].(string),
 	})
 }
