@@ -1,0 +1,17 @@
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-signin {
+    color: #2e86de;
+    font-family: sans-serif;
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+.btn-signin:visited {
+    text-decoration: none;
+}
