@@ -6,7 +6,7 @@ import (
 	"golang.org/x/oauth2/google"
 )
 
-const GoogleUserInfoAPI = "https://www.googleapis.com/oauth2/v2/userinfo"
+const GoogleUserInfoAPI = "https://www.googleapis.com/oauth2/v3/userinfo"
 
 var GoogleOAuthConf *oauth2.Config
 
