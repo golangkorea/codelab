@@ -19,7 +19,7 @@ func randToken() string {
 	return base64.StdEncoding.EncodeToString(b)
 }
 
-func Authenticate(w http.ResponseWriter, r *http.Request) {
+func GoogleAuthCallback(w http.ResponseWriter, r *http.Request) {
 	// Validate state value
 	session, _ := store.Get(r, "session")
 	state := session.Values["state"]

@@ -20,7 +20,7 @@ func RenderLogin(w http.ResponseWriter, r *http.Request) {
 	state := randToken()
 	session.Values["state"] = state
 	session.Save(r, w)
-	tmpl.ExecuteTemplate(w, "login.html", oauth.GoogleLoginURL(state))
+	tmpl.ExecuteTemplate(w, "login.html", oauth.GoogleAuthorizationURL(state))
 }
 
 func RenderProfile(w http.ResponseWriter, r *http.Request) {

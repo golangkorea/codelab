@@ -23,7 +23,7 @@ func main() {
 	// Register handlers
 	http.HandleFunc("/", handler.RenderIndex)
 	http.HandleFunc("/auth", handler.RenderLogin)
-	http.HandleFunc("/auth/callback", handler.Authenticate)
+	http.HandleFunc("/auth/callback", handler.GoogleAuthCallback)
 	http.HandleFunc("/profile", handler.RenderProfile)
 
 	// Start web server on 1333 port

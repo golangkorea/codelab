@@ -22,7 +22,7 @@ func init() {
 	}
 }
 
-// GetLoginURL returns oauth login url with state
-func GoogleLoginURL(state string) string {
+// GoogleAuthorizationURL returns google authorization url with state
+func GoogleAuthorizationURL(state string) string {
 	return GoogleOAuthConf.AuthCodeURL(state)
 }
