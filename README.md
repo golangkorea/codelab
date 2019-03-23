@@ -33,4 +33,3 @@ $ ./clean.sh
 - **oauth**: OAuth2 인증 관련 패키지
 - **static**: 정적 파일 모음 (스타일시트, 이미지등)
 - **templates**: 템플릿 파일 모음
-
