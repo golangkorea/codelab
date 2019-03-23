@@ -21,7 +21,11 @@ func randToken() string {
 
 func GoogleAuthCallback(w http.ResponseWriter, r *http.Request) {
 	// Validate state value
-	session, _ := store.Get(r, "session")
+	session, err := store.Get(r, "auth")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	state := session.Values["state"]
 	defer func() {
 		delete(session.Values, "state")
@@ -56,17 +60,15 @@ func GoogleAuthCallback(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	var authUser model.User
-	json.Unmarshal(userInfo, &authUser)
+	var user model.User
+	json.Unmarshal(userInfo, &user)
 
 	// Save the user information in session to reuse later
 	session.Options = &sessions.Options{
 		Path:   "/",
 		MaxAge: 86400,
 	}
-	session.Values["user"] = authUser.Email
-	session.Values["username"] = authUser.Name
-	session.Values["picture"] = authUser.Picture
+	session.Values["user"] = user
 	session.Save(r, w)
 
 	// Redirect to profile page
