@@ -2,10 +2,13 @@
 <html>
 <head>
     <title>Codelab Profile</title>
+    <link rel="stylesheet" href="/static/stylesheets/codelab.css">
 </head>
 <body>
-<p>{{index . "user"}}</p>
-<p>{{index . "username"}}</p>
-<p><img src="{{index . "picture"}}" alt="Profile Picture"></p>
+<div class="center profile">
+    <p><img src="{{index . "picture"}}" alt="Profile Picture"></p>
+    <p class="text title">{{index . "name"}}</p>
+    <p class="text">{{index . "email"}}</p>
+</div>
 </body>
 </html>
