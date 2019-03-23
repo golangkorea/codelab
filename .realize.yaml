@@ -1,0 +1,39 @@
+settings:
+  files:
+    outputs:
+      status: true
+      path: ""
+      name: .r.outputs.log
+    logs:
+      status: true
+      path: ""
+      name: .r.logs.log
+    errors:
+      status: true
+      path: ""
+      name: .r.errors.log
+  legacy:
+    force: false
+    interval: 0s
+server:
+  status: true
+  open: false
+  port: 5002
+  host: localhost
+schema:
+- name: codelab
+  path: .
+  commands:
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    - html
+    paths:
+    - /
+    ignore:
+      paths:
+      - .git
+      - .realize
+      - vendor

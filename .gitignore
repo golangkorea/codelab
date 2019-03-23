@@ -1,0 +1,8 @@
+# ide
+.idea/
+
+# vendor
+vendor/
+
+# task runner
+.r.*.log
