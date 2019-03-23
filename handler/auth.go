@@ -44,6 +44,7 @@ func GoogleAuthCallback(w http.ResponseWriter, r *http.Request) {
 	}
 	client := oauth.GoogleOAuthConf.Client(context.Background(), token)
 	userInfoResp, err := client.Get(oauth.GoogleUserInfoAPI)
+	defer userInfoResp.Body.Close()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
@@ -52,7 +53,6 @@ func GoogleAuthCallback(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	defer userInfoResp.Body.Close()
 
 	// Read and parse user information
 	userInfo, err := ioutil.ReadAll(userInfoResp.Body)
