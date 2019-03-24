@@ -20,17 +20,16 @@ func randToken() string {
 }
 
 func GoogleAuthCallback(w http.ResponseWriter, r *http.Request) {
-	// Validate state value
 	session, err := store.Get(r, "auth")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	defer session.Save(r, w)
+
+	// Validate state value
 	state := session.Values["state"]
-	defer func() {
-		delete(session.Values, "state")
-		session.Save(r, w)
-	}()
+	delete(session.Values, "state")
 	if state != r.FormValue("state") {
 		http.Error(w, "invalid session state", http.StatusUnauthorized)
 		return
@@ -69,7 +68,6 @@ func GoogleAuthCallback(w http.ResponseWriter, r *http.Request) {
 		MaxAge: 86400,
 	}
 	session.Values["user"] = user
-	session.Save(r, w)
 
 	// Redirect to profile page
 	http.Redirect(w, r, "/profile", http.StatusFound)
