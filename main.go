@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/golang-korea/codelab/config"
-	"github.com/golang-korea/codelab/handler"
+	"github.com/golangkorea/codelab/config"
+	"github.com/golangkorea/codelab/handler"
 )
 
 const bind = ":1333"

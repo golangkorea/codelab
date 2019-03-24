@@ -8,8 +8,8 @@ import (
 	"math/rand"
 	"net/http"
 
-	"github.com/golang-korea/codelab/model"
-	"github.com/golang-korea/codelab/oauth"
+	"github.com/golangkorea/codelab/model"
+	"github.com/golangkorea/codelab/oauth"
 	"github.com/gorilla/sessions"
 )
 

@@ -4,7 +4,7 @@ import (
 	"encoding/gob"
 	"text/template"
 
-	"github.com/golang-korea/codelab/model"
+	"github.com/golangkorea/codelab/model"
 	"github.com/gorilla/sessions"
 )
 

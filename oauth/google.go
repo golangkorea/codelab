@@ -1,7 +1,7 @@
 package oauth
 
 import (
-	"github.com/golang-korea/codelab/config"
+	"github.com/golangkorea/codelab/config"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 )
