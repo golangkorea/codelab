@@ -14,7 +14,7 @@ var (
 )
 
 func init() {
-	store = sessions.NewCookieStore([]byte("secret"))
+	store = sessions.NewCookieStore([]byte("secret-key"))
 	tmpl = template.Must(template.ParseGlob("templates/*.html"))
 
 	// Register User struct value type
