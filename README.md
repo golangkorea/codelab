@@ -9,6 +9,7 @@
 ```console
 $ git clone -b skeleton https://github.com/golangkorea/codelab
 $ cd codelab
+$ go mod init github.com/golangkorea/codelab
 $ ./clean.sh
 ```
 
